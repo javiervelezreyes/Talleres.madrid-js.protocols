@@ -1,4 +1,4 @@
-interface class Vehicle {
+interface Vehicle {
   start ()
   stop  ()
   check ()
@@ -21,6 +21,8 @@ class Truck implements Vehicle {
 }
 
 class WShop {
+  private vehicles: Vehicle[]
+  
   constructor (...vehicles: Vehicle[]) {
     this.vehicles = vehicles
   }

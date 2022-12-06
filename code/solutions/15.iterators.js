@@ -1,6 +1,3 @@
-let xs = [1, 2, 3]
-let ys = [1, 2, 3, 4, 5]
-
 function F () {
   let data = [1, 2, 3]
   let pos  = 0
@@ -29,9 +26,20 @@ function G () {
   return { next }
 }
 
-let I = Symbol.iterator
-xs[I] = F
-ys[I] = G
+!function TrialA () {
+  let fn = F ()
+  let gn = G ()
 
-for (let x of xs) console.log (x)
-for (let y of ys) console.log (y)
+  for (let n of fn) console.log (n) // Error!
+  for (let n of gn) console.log (n) // Error!
+}
+
+!function TrialB () {
+  let I = Symbol.iterator
+  let IF = { [I] : F }
+  let IG = { [I] : G }
+
+  for (let n of IF) console.log (n) // Ok
+  for (let n of IG) console.log (n) // OK
+}()
+

@@ -6,24 +6,16 @@ interface Vehicle {
 
 class Car implements Vehicle {
   construtor () {}
-  start () { console.log ('Car started') }
-  stop  () { console.log ('Car stopped') }
   check () {
     console.log ('Checking car...')
-    this.start ()
-    this.stop  ()
     console.log ('done')
   }
 }
 
 class Truck implements Vehicle {
   construtor () {}
-  start () { console.log ('Truck started') }
-  stop  () { console.log ('Truck stopped') }
   check () {
     console.log ('Checking truck...')
-    this.start ()
-    this.stop  ()
     console.log ('done')
   }
 }

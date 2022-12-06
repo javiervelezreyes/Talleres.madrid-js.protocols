@@ -11,7 +11,6 @@ function Create (x, y) {
 }
 
 function Private (e) {
-  let data   = {}
   e[PRIVATE] = e[PRIVATE] || {}
   return e[PRIVATE]
 }

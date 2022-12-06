@@ -21,14 +21,6 @@ function WShop (...vehicles) {
   return { work }
 }
 
-function Trait (fn) {
-  return function (e) {
-    let key   = fn.name
-    let value = fn.bind (e)
-    e[key] = value
-  }
-}
-
 function check () {
   console.log (`Checking...`)
   this.start ()
@@ -36,7 +28,13 @@ function check () {
   console.log ('done')
 }
 
-let Checkable = Trait (check)
+function Mixin (fn) {
+  return function (e) {
+    
+  }
+}
+
+let Checkable = Mixin (check)
 let vx = Car   ()
 let vy = Truck ()
 let vz = Car   ()
